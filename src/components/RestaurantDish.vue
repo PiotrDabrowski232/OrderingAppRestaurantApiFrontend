@@ -58,12 +58,12 @@ export default {
             this.$router.push({ name: 'AddNewDish', query: { restaurantId: this.restaurantId} });
         },
         async BlockDish(id){
-            var result = await updateData(`/Block?dishId=${id}`)
+            var result = await updateData(`/BlockFlag?dishId=${id}`)
             if(result)
                 await this.fetchDishes()
         },
         async UnBlockDish(id){
-            var result = await updateData(`/UnBlock?dishId=${id}`)
+            var result = await updateData(`/BlockFlag?dishId=${id}`)
             if(result)
                 await this.fetchDishes()
         },
